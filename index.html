@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Joja — A Valentine's Day Experience ❤️</title>
+  <meta name="description" content="A little Valentine's Day experience, made with love for Joja.">
+  <meta name="theme-color" content="#fde3e6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Jost:wght@400;500&family=Noto+Sans+Math&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-scene="0">
+
+  <!-- Shared vector symbols (hearts, flowers, music notes) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="heart" viewBox="0 0 24 24">
+        <path style="fill:currentColor" d="M12 21.2s-7.6-4.7-9.7-9.3C.8 8.5 2.6 4.5 6.4 4.5c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.8 0 5.6 4 4.1 7.4-2.1 4.6-9.7 9.3-9.7 9.3z"/>
+      </symbol>
+      <symbol id="flower" viewBox="0 0 40 40">
+        <g style="fill:var(--petal,#fff)">
+          <ellipse cx="20" cy="9" rx="5.6" ry="8.6"/>
+          <ellipse cx="20" cy="9" rx="5.6" ry="8.6" transform="rotate(60 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.6" ry="8.6" transform="rotate(120 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.6" ry="8.6" transform="rotate(180 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.6" ry="8.6" transform="rotate(240 20 20)"/>
+          <ellipse cx="20" cy="9" rx="5.6" ry="8.6" transform="rotate(300 20 20)"/>
+        </g>
+        <circle cx="20" cy="20" r="5.4" style="fill:var(--core,#F3C76B)"/>
+      </symbol>
+      <symbol id="note" viewBox="0 0 20 30">
+        <ellipse cx="7" cy="24" rx="6" ry="4.4" transform="rotate(-20 7 24)" style="fill:currentColor"/>
+        <rect x="11.6" y="3" width="2.2" height="21" rx="1" style="fill:currentColor"/>
+        <path d="M13.8 3c6 3.4 4.6 9.6 2.6 12.4.4-4.6-1-6.2-2.6-7.4z" style="fill:currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Atmosphere -->
+  <div id="bg" aria-hidden="true">
+    <div class="bg-layer bg-0"></div>
+    <div class="bg-layer bg-1"></div>
+    <div class="bg-layer bg-2"></div>
+    <div class="bg-layer bg-3"></div>
+    <div class="bg-layer bg-4"></div>
+    <div class="bg-layer bg-5"></div>
+    <div class="bg-layer bg-6"></div>
+    <div class="bg-layer bg-7"></div>
+    <div class="bg-layer bg-8"></div>
+    <div id="bg-blobs">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
+  </div>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div id="hearts" aria-hidden="true"></div>
+
+  <noscript><p class="noscript">Please enable JavaScript to open Joja's Valentine experience ❤️</p></noscript>
+
+  <main id="stage">
+
+    <!-- ============ SCENE 1 — CINEMATIC COUNTDOWN ============ -->
+    <section class="scene scene-countdown" id="scene-1" aria-label="Countdown" style="--enter-from:scale(.98);--exit-to:scale(1.08)">
+      <div class="scene-inner countdown">
+        <div class="begin-wrap">
+          <p class="begin-kicker">A little something for you</p>
+          <h1 class="begin-title">Joja</h1>
+          <button class="btn" type="button" data-begin aria-label="Begin the experience and start the music">Begin ❤️</button>
+          <p class="begin-note">Best with sound on ♪</p>
+        </div>
+        <div class="count" aria-live="polite">
+          <span class="count-num"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 2 — OPENING TYPOGRAPHY ============ -->
+    <section class="scene scene-typo" id="scene-2" aria-label="Happy Valentine's Day Joja" style="--enter-from:scale(1.03);--exit-to:translateY(-30px)">
+      <div class="scene-inner">
+        <h2 class="typo-stack" aria-label="Happy Valentine's Day Joja ❤️">
+          <span class="tw tw-happy" aria-hidden="true">HAPPY</span>
+          <span class="tw tw-val" aria-hidden="true">VALENTINE'S</span>
+          <span class="tw tw-day" aria-hidden="true">DAY</span>
+          <span class="tw tw-joja" aria-hidden="true"><span class="grad">JOJA</span> <span class="beat">❤️</span></span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 3 — CAT & GUITAR ============ -->
+    <section class="scene scene-cat" id="scene-3" aria-label="A cat playing guitar" style="--enter-from:translateY(40px) scale(.96);--exit-to:translateY(-40px) scale(.96)">
+      <div class="scene-hearts" aria-hidden="true"></div>
+      <div class="scene-inner cat-stage">
+        <p class="cat-word cat-happy rv-word">HAPPY</p>
+
+        <div class="cat-art">
+          <svg class="cat-svg" viewBox="0 0 320 340" role="img" aria-label="An illustrated cat happily playing an acoustic guitar">
+            <ellipse cx="150" cy="327" rx="92" ry="9" fill="#C58A9E" opacity=".22"/>
+
+            <g class="cat-tail">
+              <path d="M214 286Q272 288 274 236Q275 204 252 198" fill="none" stroke="#B97F69" stroke-width="25" stroke-linecap="round"/>
+              <path d="M214 286Q272 288 274 236Q275 204 252 198" fill="none" stroke="#F4CFB4" stroke-width="19" stroke-linecap="round"/>
+              <path d="M262 278q10-6 14-18M268 226q8-2 14 3" fill="none" stroke="#E4A98A" stroke-width="4" stroke-linecap="round"/>
+            </g>
+
+            <ellipse cx="150" cy="246" rx="74" ry="72" fill="#F4CFB4" stroke="#B97F69" stroke-width="3"/>
+            <ellipse cx="150" cy="264" rx="42" ry="44" fill="#FFF3E8"/>
+            <ellipse cx="114" cy="314" rx="27" ry="13" fill="#F4CFB4" stroke="#B97F69" stroke-width="3"/>
+            <ellipse cx="186" cy="314" rx="27" ry="13" fill="#F4CFB4" stroke="#B97F69" stroke-width="3"/>
+            <path d="M104 316v-6M114 318v-7M124 316v-6M176 316v-6M186 318v-7M196 316v-6" stroke="#B97F69" stroke-width="2" stroke-linecap="round"/>
+
+            <!-- Guitar -->
+            <g transform="translate(150 262) rotate(-55)">
+              <g class="cat-guitar">
+                <rect x="-7.5" y="-128" width="15" height="112" rx="2" fill="#B67A52" stroke="#8A5A44" stroke-width="2"/>
+                <path d="M-8-50h16M-8-72h16M-8-94h16M-8-114h16" stroke="#F2D9B8" stroke-width="1.6"/>
+                <rect x="-11" y="-152" width="22" height="26" rx="6" fill="#8A5A44"/>
+                <circle cx="-15" cy="-146" r="3.6" fill="#F1D7A8"/><circle cx="-15" cy="-134" r="3.6" fill="#F1D7A8"/>
+                <circle cx="15" cy="-146" r="3.6" fill="#F1D7A8"/><circle cx="15" cy="-134" r="3.6" fill="#F1D7A8"/>
+                <ellipse cx="0" cy="-16" rx="34" ry="30" fill="#8A5A44" stroke="#8A5A44" stroke-width="7"/>
+                <ellipse cx="0" cy="20" rx="46" ry="40" fill="#8A5A44" stroke="#8A5A44" stroke-width="7"/>
+                <ellipse cx="0" cy="-16" rx="34" ry="30" fill="#EDB98B"/>
+                <ellipse cx="0" cy="20" rx="46" ry="40" fill="#EDB98B"/>
+                <ellipse cx="-14" cy="14" rx="14" ry="26" fill="#F7D0AA" opacity=".55"/>
+                <circle cx="0" cy="2" r="13" fill="#5A3A32" stroke="#8A5A44" stroke-width="3"/>
+                <circle cx="0" cy="2" r="17" fill="none" stroke="#C99A6E" stroke-width="1.5"/>
+                <rect x="-17" y="34" width="34" height="6" rx="3" fill="#6B4336"/>
+                <path d="M-3.5-146V37M0-146V37M3.5-146V37" stroke="#FFF6E8" stroke-width=".9" opacity=".95"/>
+                <use href="#heart" x="14" y="-26" width="14" height="14" style="color:#E4799A"/>
+              </g>
+            </g>
+
+            <!-- Left arm on the neck -->
+            <g>
+              <path d="M106 254Q88 240 93 222" fill="none" stroke="#B97F69" stroke-width="25" stroke-linecap="round"/>
+              <path d="M106 254Q88 240 93 222" fill="none" stroke="#F4CFB4" stroke-width="19" stroke-linecap="round"/>
+              <ellipse cx="93" cy="219" rx="14" ry="12" fill="#F4CFB4" stroke="#B97F69" stroke-width="3"/>
+              <path d="M87 214v6M93 212v8M99 214v6" stroke="#B97F69" stroke-width="1.6" stroke-linecap="round"/>
+            </g>
+
+            <!-- Strumming arm -->
+            <g class="cat-strum">
+              <path d="M208 238Q202 264 170 266" fill="none" stroke="#B97F69" stroke-width="25" stroke-linecap="round"/>
+              <path d="M208 238Q202 264 170 266" fill="none" stroke="#F4CFB4" stroke-width="19" stroke-linecap="round"/>
+              <ellipse cx="164" cy="266" rx="13" ry="11" fill="#F4CFB4" stroke="#B97F69" stroke-width="3"/>
+              <path d="M158 262l-4 4M158 270l-4-3" stroke="#B97F69" stroke-width="1.6" stroke-linecap="round"/>
+            </g>
+
+            <!-- Head -->
+            <g class="cat-head">
+              <path d="M90 132Q80 76 98 60Q124 70 140 100Z" fill="#F4CFB4" stroke="#B97F69" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M210 132Q220 76 202 60Q176 70 160 100Z" fill="#F4CFB4" stroke="#B97F69" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M99 117Q94 86 103 76Q120 84 130 101Z" fill="#F7A8B8"/>
+              <path d="M201 117Q206 86 197 76Q180 84 170 101Z" fill="#F7A8B8"/>
+              <ellipse cx="150" cy="152" rx="69" ry="56" fill="#F4CFB4" stroke="#B97F69" stroke-width="3"/>
+              <path d="M150 98v15M133 101l3 12M167 101l-3 12" stroke="#E4A98A" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <path d="M112 154Q123 140 134 154M166 154Q177 140 188 154" stroke="#4A2F3A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+              <ellipse cx="103" cy="168" rx="13" ry="7.5" fill="#F8A5B8" opacity=".7"/>
+              <ellipse cx="197" cy="168" rx="13" ry="7.5" fill="#F8A5B8" opacity=".7"/>
+              <path d="M143 165Q150 160 157 165Q154 172 150 173Q146 172 143 165Z" fill="#E98098"/>
+              <path d="M150 173Q150 182 141 183M150 173Q150 182 159 183" stroke="#4A2F3A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+              <path d="M92 166L60 160M92 174L62 178M208 166L240 160M208 174L238 178" stroke="#B97F69" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- Bow -->
+            <path d="M150 210L127 198Q122 210 127 223Z" fill="#F29BB1" stroke="#D8718B" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M150 210L173 198Q178 210 173 223Z" fill="#F29BB1" stroke="#D8718B" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="150" cy="210" r="6.5" fill="#E4799A" stroke="#D8718B" stroke-width="2"/>
+
+            <!-- Music notes -->
+            <use class="note n1" href="#note" x="22" y="112" width="22" height="33" style="color:#E4799A"/>
+            <use class="note n2" href="#note" x="268" y="136" width="20" height="30" style="color:#C9A66B"/>
+            <use class="note n3" href="#note" x="250" y="70" width="18" height="27" style="color:#F29BB1"/>
+          </svg>
+        </div>
+
+        <p class="cat-word cat-valentine rv-word">VALENTINE</p>
+
+        <div class="scene-actions">
+          <div class="continue-group">
+            <p class="next-caption" aria-hidden="true">♡ Next little moment ♡</p>
+            <button class="btn" type="button" data-continue disabled>Continue ❤️</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 4 — INTERACTIVE SCRAPBOOK ============ -->
+    <section class="scene scene-scrap" id="scene-4" aria-label="Interactive scrapbook" style="--enter-from:rotate(-2deg) translateY(30px);--exit-to:rotate(2deg) translateY(-20px) scale(.97)">
+      <div class="scene-inner sb-stage">
+
+        <button class="sb-cover" type="button" aria-label="Open Joja's scrapbook">
+          <span class="sb-spine" aria-hidden="true"></span>
+          <span class="tape tape-a" aria-hidden="true"></span>
+          <span class="tape tape-b lav" aria-hidden="true"></span>
+          <span class="sb-mini" aria-hidden="true">
+            <span class="sb-mini-photo"><svg class="ic"><use href="#heart"/></svg></span>
+          </span>
+          <svg class="sticker st-1" aria-hidden="true" style="--petal:#fff;--core:#F3C76B"><use href="#flower"/></svg>
+          <svg class="sticker st-2" aria-hidden="true" style="--petal:#FBC4D4;--core:#fff"><use href="#flower"/></svg>
+          <svg class="sticker st-3 ic" aria-hidden="true"><use href="#heart"/></svg>
+          <span class="sb-cover-title">Joja</span>
+          <span class="sb-cover-sub">our little scrapbook</span>
+          <span class="sb-cover-hint">Tap to open ❤️</span>
+        </button>
+
+        <div class="sb-open" hidden>
+          <div class="sb-page sb-left">
+            <svg class="sticker st-4" aria-hidden="true" style="--petal:#fff;--core:#F3C76B"><use href="#flower"/></svg>
+            <svg class="sticker st-5 ic" aria-hidden="true"><use href="#heart"/></svg>
+            <svg class="sticker st-6" aria-hidden="true" style="--petal:#E3D5F5;--core:#fff"><use href="#flower"/></svg>
+            <div class="pol-wrap">
+              <figure class="polaroid" style="--tilt:-3deg;--photo-w:min(70vw,290px);--photo-h:44dvh">
+                <span class="tape" aria-hidden="true"></span>
+                <div class="polaroid-photo"><img data-src="images/photo1.jpg" alt="A favourite memory of Joja, in a polaroid frame" decoding="async"></div>
+                <figcaption>Joja ♡</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="sb-page sb-right">
+            <span class="tape tape-r lav" aria-hidden="true"></span>
+            <div class="arabic-scroll" dir="rtl" lang="ar" tabindex="0" role="region" aria-label="رسالة لجوجا">
+              <p class="ar-main">بصي ب مناسبه اليوم الحلو ده عايز اقولك ان انا بحبك اوي خالص يا احلى جوجا ف الدنيا كلها رغم كل المشاكل اللي بتحصل بس اهم حاجة ان احنا بنفضل كويسين وبنحاول نصلح دايما بصي انا بحبك جدا جدا جدا وعارف اني مقصر معاكي ف حاجات كتير اوي بس بحاول دايما يعني مكنش كده يارب يكون الموقع عجبك يارب وتكوني فرحانه بي ده أهم حاجه عندي وبجد انا بحبك اوي وبموت فيكي ونفسي نكمل بقيت عمرنا مع بعض يارب لحد ما نكون ف بيت واحد انشاءلله ربنا يخليكي ليا يا احلى حاجه ف حياتي ❤️❤️❤️❤️</p>
+              <p class="ar-sign" dir="auto">Love you joja💋❤️</p>
+              <p class="ar-sign" dir="auto">❤️❤️❤️❤️💋💋💓</p>
+              <p class="ar-sign" dir="auto">Happy Valentine day Joja❤️❤️</p>
+            </div>
+          </div>
+          <div class="sb-actions">
+            <button class="btn btn-soft sb-close" type="button" aria-label="Close the scrapbook and continue">Close the scrapbook ✕</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ SCENE 5 — YOUR BEAUTIFUL SMILE ============ -->
+    <section class="scene scene-smile msg-scene" id="scene-5" data-mode="words" aria-labelledby="t5" style="--enter-from:translateY(30px);--exit-to:translateY(-24px)">
+      <div class="scene-hearts" aria-hidden="true"></div>
+      <div class="scene-inner smile-stage">
+        <h2 class="chapter-title ct-script" id="t5">Your Beautiful Smile</h2>
+        <div class="pol-wrap">
+          <figure class="polaroid" style="--tilt:-2.5deg;--photo-w:min(66vw,280px);--photo-h:36dvh">
+            <span class="tape" aria-hidden="true"></span>
+            <span class="tape tape-corner lav" aria-hidden="true"></span>
+            <div class="polaroid-photo"><img data-src="images/photo2.jpg" alt="Joja smiling — her beautiful smile" decoding="async"></div>
+            <figcaption>that smile ♡</figcaption>
+          </figure>
+        </div>
+        <div class="msg msg-words" dir="rtl" lang="ar" data-msg></div>
+        <div class="msg-actions">
+          <button class="skip-btn" type="button" data-skip>Skip animation</button>
+          <div class="continue-group">
+            <p class="next-caption" aria-hidden="true">♡ Next little moment ♡</p>
+            <button class="btn" type="button" data-continue disabled>Continue ❤️</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 6 — MY SWEET GIRL ============ -->
+    <section class="scene scene-sweet msg-scene" id="scene-6" data-mode="phrases" aria-labelledby="t6" style="--enter-from:translateX(40px);--exit-to:translateX(-40px)">
+      <div class="scene-hearts" aria-hidden="true"></div>
+      <div class="scene-inner sweet-stage">
+        <div class="sweet-photo pol-wrap">
+          <figure class="sticker-frame" style="--photo-w:min(66vw,280px);--photo-h:38dvh">
+            <div class="sf-photo"><img data-src="images/photo3.jpg" alt="Joja, my sweet girl" decoding="async"></div>
+          </figure>
+          <svg class="flw f1" aria-hidden="true" style="--petal:#fff;--core:#F3C76B"><use href="#flower"/></svg>
+          <svg class="flw f2" aria-hidden="true" style="--petal:#FBC4D4;--core:#fff"><use href="#flower"/></svg>
+          <svg class="flw f3" aria-hidden="true" style="--petal:#FFDCC8;--core:#E4799A"><use href="#flower"/></svg>
+          <svg class="hrt h1 ic" aria-hidden="true"><use href="#heart"/></svg>
+          <svg class="hrt h2 ic" aria-hidden="true"><use href="#heart"/></svg>
+        </div>
+        <div class="sweet-card">
+          <svg class="flw fc1" aria-hidden="true" style="--petal:#fff;--core:#F3C76B"><use href="#flower"/></svg>
+          <svg class="hrt hc1 ic" aria-hidden="true"><use href="#heart"/></svg>
+          <h2 class="chapter-title ct-sweet" id="t6">My Sweet Girl</h2>
+          <div class="msg msg-phrases" dir="rtl" lang="ar" data-msg></div>
+          <div class="msg-actions">
+            <button class="skip-btn" type="button" data-skip>Skip animation</button>
+            <div class="continue-group">
+              <p class="next-caption" aria-hidden="true">♡ Next little moment ♡</p>
+              <button class="btn btn-light" type="button" data-continue disabled>Continue ❤️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 7 — THE BEST THING THAT HAPPENED TO ME ============ -->
+    <section class="scene scene-dream msg-scene" id="scene-7" data-mode="lines" aria-labelledby="t7" style="--enter-from:scale(1.06);--exit-to:scale(.96)">
+      <div class="scene-inner dream-stage">
+        <h2 class="chapter-title ct-dream" id="t7">The Best Thing That Happened to Me</h2>
+        <figure class="dream-photo pol-wrap" style="--photo-w:min(78vw,340px);--photo-h:38dvh">
+          <span class="halo" aria-hidden="true"></span>
+          <div class="dp-photo"><img data-src="images/photo4.jpg" alt="Joja, the best thing that happened to me" decoding="async"></div>
+        </figure>
+        <div class="msg msg-lines" dir="rtl" lang="ar" data-msg></div>
+        <div class="msg-actions">
+          <button class="skip-btn" type="button" data-skip>Skip animation</button>
+          <div class="continue-group">
+            <p class="next-caption" aria-hidden="true">♡ Next little moment ♡</p>
+            <button class="btn" type="button" data-continue disabled>Continue ❤️</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 8 — ALEXANDRIA: A MEMORY TO KEEP ============ -->
+    <section class="scene scene-memory msg-scene" id="scene-8" data-mode="letter" aria-labelledby="t8" style="--enter-from:translateY(40px) rotate(1deg);--exit-to:translateY(-30px)">
+      <div class="scene-inner memory-stage">
+        <div class="memory-frame-wrap pol-wrap">
+          <figure class="memory-frame" style="--photo-w:min(70vw,300px);--photo-h:40dvh">
+            <div class="memory-mat">
+              <div class="mf-photo"><img data-src="images/photo5.jpg" alt="Joja and me in Alexandria — a memory to keep" decoding="async"></div>
+            </div>
+            <svg class="corner c1 ic" aria-hidden="true"><use href="#heart"/></svg>
+            <svg class="corner c2" aria-hidden="true" style="--petal:#fff;--core:#C9A66B"><use href="#flower"/></svg>
+            <figcaption>Alexandria</figcaption>
+          </figure>
+        </div>
+        <article class="letter">
+          <span class="stamp" aria-hidden="true"><svg class="ic"><use href="#heart"/></svg></span>
+          <h2 class="chapter-title ct-memory" id="t8">Alexandria — A Memory to Keep</h2>
+          <div class="msg msg-letter" dir="rtl" lang="ar" data-msg></div>
+          <div class="msg-actions">
+            <button class="skip-btn" type="button" data-skip>Skip animation</button>
+            <div class="continue-group">
+              <p class="next-caption" aria-hidden="true">♡ Next little moment ♡</p>
+              <button class="btn" type="button" data-continue disabled>Continue ❤️</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SCENE 9 — FINAL LOVE SCENE ============ -->
+    <section class="scene scene-final" id="scene-9" aria-label="Final love scene" style="--enter-from:scale(.92);--exit-to:scale(1.05)">
+      <div class="scene-hearts" aria-hidden="true"></div>
+      <div class="final-flowers" aria-hidden="true">
+        <svg class="ff ff1" style="--petal:#fff;--core:#F3C76B"><use href="#flower"/></svg>
+        <svg class="ff ff2" style="--petal:#FBC4D4;--core:#fff"><use href="#flower"/></svg>
+        <svg class="ff ff3" style="--petal:#FFE8D6;--core:#E4799A"><use href="#flower"/></svg>
+        <svg class="ff ff4" style="--petal:#fff;--core:#C9A66B"><use href="#flower"/></svg>
+        <svg class="ff ff5" style="--petal:#E3D5F5;--core:#fff"><use href="#flower"/></svg>
+        <svg class="ff ff6" style="--petal:#FFDCC8;--core:#F3C76B"><use href="#flower"/></svg>
+      </div>
+      <div class="scene-inner final-stage">
+        <span class="final-glow" aria-hidden="true"></span>
+        <p class="final-kicker fin-item">Happy Valentine's Day, Joja</p>
+        <div class="orn fin-item" aria-hidden="true"><i></i><svg class="ic"><use href="#heart"/></svg><i></i></div>
+        <h2 class="final-title" aria-label="𝓑𝓪𝓽𝓪𝓽𝓪🌼💕">
+          <span class="ft-script" aria-hidden="true"><span class="g">𝓑</span><span class="g">𝓪</span><span class="g">𝓽</span><span class="g">𝓪</span><span class="g">𝓽</span><span class="g">𝓪</span></span><span class="ft-emoji" aria-hidden="true">🌼💕</span>
+        </h2>
+        <div class="orn fin-item" aria-hidden="true"><i></i><svg class="ic"><use href="#heart"/></svg><i></i></div>
+        <p class="final-sub fin-item">Forever yours</p>
+        <button class="btn btn-soft fin-item replay-btn" type="button" aria-label="Replay the experience from the beginning">Replay ↺</button>
+      </div>
+    </section>
+
+  </main>
+
+  <button id="music-btn" class="music-btn" type="button" aria-label="Play music" aria-pressed="false" title="Play music">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="music-label">Play</span>
+  </button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script defer src="js/animations.js"></script>
+  <script defer src="js/music.js"></script>
+  <script defer src="js/scenes.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>
